@@ -1,0 +1,15 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url("./fontOne.woff") format('woff'),
+         url("./fontTwo.woff2") format('woff2');
+    font-weight: 600;
+    font-style: italic;
+}
+
+
+
+.hello {
+    color: skyblue;
+    font-family: 'MyFont';
+    background: url("./timg.jpg");
+}

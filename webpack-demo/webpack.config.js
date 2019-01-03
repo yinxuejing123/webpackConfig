@@ -1,0 +1,48 @@
+const path = require("path");
+
+module.exports = {
+    entry:'./src/index.js',//入口文件
+    output:{//输出文件
+        filename:'bundle.js',//文件名称
+        path:path.resolve(__dirname,'dist')//文件路径
+    },
+    module:{
+        rules:[
+            //加载校验css文件
+            {
+                test:/\.css$/,//正则判断是否css文件
+                use:[
+                    'style-loader',//安装的style插件
+                    'css-loader'//安装的css插件
+                ]
+            },
+            //校验图片
+            {
+                test:/\.(png|svg|jpg|gif)$/,//正则检验图片类型
+                use:[
+                    'file-loader'//使用安装的插件
+                ]
+            },
+            //检验字体
+            {
+                test:/\.(woff|woff2|eot|ttf|otf)$/,//正则判断字体类型
+                use:[
+                    'file-loader'
+                ]
+            },
+            //校验导入的数据
+            {
+                test:/\.(csv|tsv)$/,
+                use:[
+                    'csv-loader'
+                ]
+            },
+            {
+                test:/\.xml$/,
+                use:[
+                    'xml-loader'
+                ]
+            },
+        ]
+    }
+};
