@@ -1,7 +1,7 @@
-import _ from 'lodash';
+// import _ from 'lodash';
 import printMe from './print.js'
 
-// import './style.css';
+import './styles.css';
 // import MyImage from './timg.jpg';
 // import Data from './data.xml';
 
